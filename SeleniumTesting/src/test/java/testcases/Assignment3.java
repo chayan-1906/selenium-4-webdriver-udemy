@@ -1,11 +1,10 @@
 package testcases;
 
-import java.time.Duration;
-
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+import java.time.Duration;
 
 /*
  * Navigate to https://timesofindia.indiatimes.com/poll.cms
@@ -18,12 +17,12 @@ public class Assignment3 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		WebDriverManager.chromedriver().setup();
-		WebDriver driver = new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		WebDriverManager.chromedriver ( ).setup ( );
+		WebDriver driver = new ChromeDriver ( );
+		driver.manage ( ).window ( ).maximize ( );
+		driver.manage ( ).timeouts ( ).implicitlyWait ( Duration.ofSeconds ( 5 ) );
 
-		driver.get("https://timesofindia.indiatimes.com/poll.cms");
+		driver.get ( "https://timesofindia.indiatimes.com/poll.cms" );
 	}
 
 }
