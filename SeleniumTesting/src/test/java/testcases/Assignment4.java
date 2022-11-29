@@ -7,6 +7,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.concurrent.TimeUnit;
 
+// TODO: Loop in and scroll the window slowly to resize. Section 18 Video 169.
 public class Assignment4 {
 
 	public static void main(String[] args) throws InterruptedException {
