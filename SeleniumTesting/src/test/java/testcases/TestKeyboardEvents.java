@@ -26,10 +26,13 @@ public class TestKeyboardEvents {
 		System.out.printf ( outsideGmailInput.getText ( ) );
 
 		Actions actions = new Actions ( webDriver );
-		actions.click ( outsideGmailInput ).perform ( );
-		actions.sendKeys ( Keys.chord ( Keys.CONTROL + "a" ) ).sendKeys ( Keys.chord ( Keys.CONTROL + "c" ) ).perform ( );
-		emailInput.click ( );
-		actions.sendKeys ( Keys.chord ( Keys.CONTROL + "v" ) ).perform ( );
-		actions.sendKeys ( Keys.ENTER ).perform ( );
+		actions.keyDown ( outsideGmailInput, Keys.CONTROL ).sendKeys ( "a" ).sendKeys ( "c" ).perform ( );
+		actions.keyDown ( emailInput, Keys.CONTROL ).sendKeys ( "v" ).perform ( );
+
+//		actions.click ( outsideGmailInput ).perform ( );
+//		actions.sendKeys ( Keys.chord ( Keys.CONTROL + "a" ) ).sendKeys ( Keys.chord ( Keys.CONTROL + "c" ) ).perform ( );
+//		emailInput.click ( );
+//		actions.sendKeys ( Keys.chord ( Keys.CONTROL + "v" ) ).perform ( );
+//		actions.sendKeys ( Keys.ENTER ).perform ( );
 	}
 }
