@@ -24,7 +24,7 @@ public class TestEnablePerformanceMonitoring {
 
 		devTools.send ( Performance.enable ( Optional.of ( EnableTimeDomain.TIMETICKS ) ) );
 
-		webDriver.get ( "http://google.com" );
+		webDriver.get ( "https://google.com" );
 
 		List<Metric> metrics = devTools.send ( Performance.getMetrics ( ) );
 

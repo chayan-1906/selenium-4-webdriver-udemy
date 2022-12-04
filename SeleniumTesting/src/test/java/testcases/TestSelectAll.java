@@ -17,15 +17,15 @@ public class TestSelectAll {
 
 		WebDriverManager.chromedriver ( ).setup ( );
 		WebDriver webDriver = new ChromeDriver ( );
-		webDriver.get ( "https://www.youtube.com/" );
+		webDriver.get ( "https://www.google.com/" );
 		webDriver.manage ( ).timeouts ( ).implicitlyWait ( 10, TimeUnit.SECONDS );
 
-		WebElement page = webDriver.findElement ( By.xpath ( "//*[@id='page-manager']" ) );
+		WebElement page = webDriver.findElement ( By.className ( "L3eUgb" ) );
 		System.out.println ( page.isEnabled ( ) + "          " + page.isDisplayed ( ) );
 
 		Actions actions = new Actions ( webDriver );
 		actions.click ( page ).perform ( );
-		actions.sendKeys ( page, Keys.chord ( Keys.CONTROL + "a" ) ).perform ();
-//		actions.keyDown ( Keys.CONTROL ).sendKeys ( "a" ).perform ( );
+//		actions.sendKeys ( page, Keys.chord ( Keys.COMMAND + "a" ) ).perform ();
+		actions.keyDown ( Keys.COMMAND ).sendKeys ( "a" ).perform ( );
 	}
 }
