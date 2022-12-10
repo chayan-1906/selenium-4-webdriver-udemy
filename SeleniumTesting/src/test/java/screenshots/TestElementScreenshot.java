@@ -5,8 +5,6 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
@@ -23,15 +21,8 @@ public class TestElementScreenshot {
 
 	public static void captureElementScreenshot(WebDriver webDriver) throws IOException {
 		WebElement webElement = webDriver.findElement ( By.xpath ( "//img[@alt='Google']" ) );
-		File screenshot = ((TakesScreenshot) webDriver).getScreenshotAs ( OutputType.FILE );
-		BufferedImage fullImg = ImageIO.read ( screenshot );
-		Point point = webElement.getLocation ( );
-		int eleWidth = webElement.getSize ( ).getWidth ( );
-		int eleHeight = webElement.getSize ( ).getHeight ( );
-		BufferedImage elementScreenshot = fullImg.getSubimage ( point.getX ( ), point.getY ( ), eleWidth, eleHeight );
-		ImageIO.write ( elementScreenshot, "png", screenshot );
-		File screenshotLocation = new File ( "./screenshot/" + LocalDateTime.now ( ) + "_element.png" );
-		FileUtils.copyFile ( screenshot, screenshotLocation );
+		File screenshot = webElement.getScreenshotAs ( OutputType.FILE );
+		FileUtils.copyFile ( screenshot, new File ( "./screenshot/" + LocalDateTime.now ( ) + "_element.png" ) );
 	}
 
 	public static void main(String[] args) throws IOException {
