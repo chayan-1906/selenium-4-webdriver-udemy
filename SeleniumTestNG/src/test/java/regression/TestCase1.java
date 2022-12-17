@@ -1,8 +1,8 @@
-package testcases;
+package regression;
 
 import org.testng.annotations.*;
 
-public class TestCase1 extends BaseTest {
+public class TestCase1 {
 
 	@BeforeTest
 	public void createDBConnection() {
@@ -24,12 +24,12 @@ public class TestCase1 extends BaseTest {
 		System.out.println ( "Closing browser" );
 	}
 
-	@Test(priority = 1, groups = "functional")
+	@Test(priority = 1)
 	public void doUserReg() {
 		System.out.println ( "Executing User Reg test" );
 	}
 
-	@Test(priority = 2, groups = "functional")
+	@Test(priority = 2)
 	public void doLogin() {
 		System.out.println ( "Executing login test" );
 	}
