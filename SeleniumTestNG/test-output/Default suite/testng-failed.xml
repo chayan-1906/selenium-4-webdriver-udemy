@@ -3,9 +3,21 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testcases.TestCase2">
+      <class name="regression.TestCase2">
         <methods>
           <include name="validateTitles"/>
+        </methods>
+      </class> <!-- regression.TestCase2 -->
+      <class name="testcases.TestSkip">
+        <methods>
+          <include name="isSkip"/>
+        </methods>
+      </class> <!-- testcases.TestSkip -->
+      <class name="testcases.TestCase2">
+        <methods>
+          <include name="setUp"/>
+          <include name="validateTitles"/>
+          <include name="tearDown"/>
         </methods>
       </class> <!-- testcases.TestCase2 -->
     </classes>

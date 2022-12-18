@@ -3,6 +3,7 @@ package customlisteners;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+import org.testng.Reporter;
 
 public class Listeners implements ITestListener {
 	/**
@@ -36,6 +37,8 @@ public class Listeners implements ITestListener {
 	 */
 	@Override
 	public void onTestFailure(ITestResult result) {
+		System.setProperty ( "org.uncommons.reportng.escape-output", "false" );
+		Reporter.log ( "<a href=\"/Users/padmanabhadas/Downloads/Padmanabha Das.jpg\" target=\"_blank\">Screenshot link</a>" );
 		System.out.println ( "Capturing Screenshot for the failed test -- " + result.getName ( ) );
 	}
 

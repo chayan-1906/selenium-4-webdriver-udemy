@@ -1,6 +1,6 @@
 package regression;
 
-import org.testng.Assert;
+import org.testng.AssertJUnit;
 import org.testng.annotations.Test;
 
 public class TestCase2 {
@@ -15,7 +15,7 @@ public class TestCase2 {
 		 * System.out.println("Test case passes"); } else {
 		 * System.out.println("Test case fails"); }
 		 */
-		Assert.assertEquals ( actualTitle, expectedTitle );
+		AssertJUnit.assertEquals ( actualTitle, expectedTitle );
 	}
 
 }

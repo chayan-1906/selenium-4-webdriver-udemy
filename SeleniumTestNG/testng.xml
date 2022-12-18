@@ -3,7 +3,8 @@
 
 <suite name="Functional Suite" verbose="1">
     <listeners>
-	<listener class-name="customlisteners.Listeners"></listener>
+	<listener class-name="customlisteners.Listeners"/>
+	<listener class-name="org.uncommons.reportng.HTMLReporter"/>
     </listeners>
 
     <!--<groups>
